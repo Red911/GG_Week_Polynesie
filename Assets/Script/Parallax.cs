@@ -5,7 +5,7 @@ using UnityEngine;
 public class Parallax : MonoBehaviour
 {
     public float depth = 1;
-
+    public float respawnPos;
     private PlayerBehaviour player;
     
     void Awake()
@@ -21,8 +21,8 @@ public class Parallax : MonoBehaviour
 
         pos.x -= realvelocity * Time.fixedDeltaTime;
 
-        if (pos.x <= -15)
-            pos.x = 15;
+        if (pos.x <= -respawnPos)
+            pos.x = respawnPos;
 
         transform.position = pos;
     }
