@@ -6,12 +6,15 @@ public class PlayerBehaviour : MonoBehaviour
 {
     [Header("Movement")]
     public float gravity;
+    public float distance = 0f;
+    public Vector2 velocity;
+    public float maxVelocity = 100f;
     public float maxAcceleration = 10;
     public float acceleration = 10;
     public float jumpVelocity = 20f;
     public float groundHeight = 10f;
-    private bool isGrounded;
-    private Vector2 velocity;
+    public bool isGrounded;
+    
    
     
     void Update()
@@ -36,10 +39,27 @@ public class PlayerBehaviour : MonoBehaviour
             pos.y += velocity.y * Time.fixedDeltaTime;
             velocity.y += gravity * Time.fixedDeltaTime;
 
-            if (pos.y <= groundHeight)
+            Vector2 rayOrigin = new Vector2(pos.x + 0.7f, pos.y);
+            Vector2 rayDirection = Vector2.up;
+            float rayDistance = velocity.y * Time.fixedDeltaTime;
+            // if (pos.y <= groundHeight)
+            // {
+            //     pos.y = groundHeight;
+            //     isGrounded = true;
+            // }
+        }
+
+        distance += velocity.x * Time.fixedDeltaTime;
+        
+        if (isGrounded)
+        {
+            float velocityRatio = velocity.x / maxVelocity;
+            acceleration = maxAcceleration * (1 - velocityRatio);
+            
+            velocity.x += acceleration * Time.fixedDeltaTime;
+            if (velocity.x >= maxVelocity)
             {
-                pos.y = groundHeight;
-                isGrounded = true;
+                velocity.x = maxVelocity;
             }
         }
 
