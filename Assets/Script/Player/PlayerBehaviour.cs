@@ -6,6 +6,7 @@ public class PlayerBehaviour : MonoBehaviour
 {
     [Header("Movement")]
     public float gravity;
+    public float maxAcceleration = 10;
     public float acceleration = 10;
     public float jumpVelocity = 20f;
     public float groundHeight = 10f;
