@@ -467,6 +467,7 @@ MonoBehaviour:
   generationPoint: {fileID: 231069286}
   distanceBetweenmin: 3
   distanceBetweenMax: 7
+  objPool: {fileID: 1988191181}
 --- !u!4 &1167450250
 Transform:
   m_ObjectHideFlags: 0
@@ -756,7 +757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolObject: {fileID: 995812411927752260, guid: e2e5ef5d0e6420b49a9d7bafd217a860, type: 3}
-  pooledAmount: 10
+  pooledAmount: 5
 --- !u!4 &1988191182
 Transform:
   m_ObjectHideFlags: 0

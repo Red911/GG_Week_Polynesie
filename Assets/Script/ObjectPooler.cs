@@ -23,8 +23,19 @@ public class ObjectPooler : MonoBehaviour
     }
 
     
-    void Update()
+    public GameObject GetPoolObject()
     {
+        for (int i = 0; i < poolObjects.Count; i++)
+        {
+            if (!poolObjects[i].activeInHierarchy)
+            {
+                return poolObjects[i];
+            }
+        }
         
+        GameObject obj = (GameObject) Instantiate(poolObject);
+        obj.SetActive(false);
+        poolObjects.Add(obj);
+        return obj;
     }
 }

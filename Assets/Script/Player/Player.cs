@@ -1,22 +1,9 @@
-﻿/* 
-    ------------------- Code Monkey -------------------
-
-    Thank you for downloading this package
-    I hope you find it useful in your projects
-    If you have any questions let me know
-    Cheers!
-
-               unitycodemonkey.com
-    --------------------------------------------------
- */
-
+﻿
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
-/*
- * Simple Jump
- * */
 public class Player : MonoBehaviour {
 
     private static Player instance;
@@ -42,6 +29,8 @@ public class Player : MonoBehaviour {
         rigidbody2d = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
+
+    
 
     private void Update() {
         if (isDead) return;
