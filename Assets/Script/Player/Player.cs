@@ -26,17 +26,21 @@ public class Player : MonoBehaviour {
     public float jumpVelocity = 100f;
     public float moveSpeed = 40f;
     
-    private Rigidbody2D rigidbody2d;
-    private BoxCollider2D boxCollider;
+    [SerializeField] private Rigidbody2D rigidbody2d;
+    [SerializeField] private BoxCollider2D boxCollider;
     private bool waitForStart;
     private bool isDead;
 
     private void Awake() {
         instance = this;
-        rigidbody2d = transform.GetComponent<Rigidbody2D>();
-        boxCollider = transform.GetComponent<BoxCollider2D>();
         waitForStart = true;
         isDead = false;
+    }
+
+    private void Start()
+    {
+        rigidbody2d = GetComponent<Rigidbody2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     private void Update() {
