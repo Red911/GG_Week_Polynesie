@@ -14,44 +14,47 @@ public class PlateformGenerator : MonoBehaviour
     public float distanceBetweenmin;
     public float distanceBetweenMax;
 
-    public GameObject[] platforms;
+    //public GameObject[] platforms;
     private int platformSelector;
     private float[] platformWidths;
+    
 
-    //public ObjectPooler objPool;
+    public ObjectPooler[] objPools;
     
     void Start()
     {
         // platformWidth = platform.GetComponent<BoxCollider2D>().size.x;
 
-        platformWidths = new float[platforms.Length];
+        platformWidths = new float[objPools.Length];
 
-        for (int i = 0; i < platforms.Length; i++)
+        for (int i = 0; i < objPools.Length; i++)
         {
-            platformWidths[i] = platforms[i].GetComponent<BoxCollider2D>().size.x;
+            platformWidths[i] = objPools[i].poolObject.GetComponent<BoxCollider2D>().size.x;
         }
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (transform.position.x < generationPoint.position.x)
         {
             distanceBetween = Random.Range(distanceBetweenmin, distanceBetweenMax);
             
-            platformSelector = Random.Range(0,platforms.Length);
+            platformSelector = Random.Range(0,objPools.Length);
             
-            transform.position = new Vector3(transform.position.x + platformWidths[platformSelector] + distanceBetween, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] /2)+ distanceBetween, transform.position.y, transform.position.z);
 
             
             
-            Instantiate(platforms[platformSelector], transform.position, transform.rotation);
+            // Instantiate(platforms[platformSelector], transform.position, transform.rotation);
 
-            // GameObject newPlatform = objPool.GetPoolObject();
-            //
-            // newPlatform.transform.position = transform.position;
-            // newPlatform.transform.position = transform.position;
-            // newPlatform.SetActive(true);
+            GameObject newPlatform = objPools[platformSelector].GetPoolObject();
+            
+            newPlatform.transform.position = transform.position;
+            newPlatform.transform.position = transform.position;
+            newPlatform.SetActive(true);
+            
+            transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] /2)+ distanceBetween, transform.position.y, transform.position.z);
         }
     }
 }
