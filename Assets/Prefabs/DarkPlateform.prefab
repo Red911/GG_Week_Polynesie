@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 995812411927752267}
   - component: {fileID: 995812411927752266}
   m_Layer: 3
-  m_Name: Plateform
+  m_Name: DarkPlateform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

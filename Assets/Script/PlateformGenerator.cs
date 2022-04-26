@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class PlateformGenerator : MonoBehaviour
@@ -13,11 +14,22 @@ public class PlateformGenerator : MonoBehaviour
     public float distanceBetweenmin;
     public float distanceBetweenMax;
 
-    public ObjectPooler objPool;
+    public GameObject[] platforms;
+    private int platformSelector;
+    private float[] platformWidths;
+
+    //public ObjectPooler objPool;
     
     void Start()
     {
-        platformWidth = platform.GetComponent<BoxCollider2D>().size.x;
+        // platformWidth = platform.GetComponent<BoxCollider2D>().size.x;
+
+        platformWidths = new float[platforms.Length];
+
+        for (int i = 0; i < platforms.Length; i++)
+        {
+            platformWidths[i] = platforms[i].GetComponent<BoxCollider2D>().size.x;
+        }
     }
 
     // Update is called once per frame
@@ -26,15 +38,20 @@ public class PlateformGenerator : MonoBehaviour
         if (transform.position.x < generationPoint.position.x)
         {
             distanceBetween = Random.Range(distanceBetweenmin, distanceBetweenMax);
-            transform.position = new Vector3(transform.position.x + platformWidth + distanceBetween, transform.position.y, transform.position.z);
+            
+            platformSelector = Random.Range(0,platforms.Length);
+            
+            transform.position = new Vector3(transform.position.x + platformWidths[platformSelector] + distanceBetween, transform.position.y, transform.position.z);
 
-            // Instantiate(platform, transform.position, transform.rotation);
+            
+            
+            Instantiate(platforms[platformSelector], transform.position, transform.rotation);
 
-            GameObject newPlatform = objPool.GetPoolObject();
-
-            newPlatform.transform.position = transform.position;
-            newPlatform.transform.position = transform.position;
-            newPlatform.SetActive(true);
+            // GameObject newPlatform = objPool.GetPoolObject();
+            //
+            // newPlatform.transform.position = transform.position;
+            // newPlatform.transform.position = transform.position;
+            // newPlatform.SetActive(true);
         }
     }
 }

@@ -467,7 +467,11 @@ MonoBehaviour:
   generationPoint: {fileID: 231069286}
   distanceBetweenmin: 3
   distanceBetweenMax: 7
-  objPool: {fileID: 1988191181}
+  platforms:
+  - {fileID: 995812411927752260, guid: e2e5ef5d0e6420b49a9d7bafd217a860, type: 3}
+  - {fileID: 5895675938947629145, guid: 3636de36b61bd344eb9ecd02bd910bcc, type: 3}
+  - {fileID: 6327333097264925014, guid: 3ff06dc5b3063ca4bb266c6fc430a3f8, type: 3}
+  - {fileID: 552524476745164878, guid: 0f48bd4b80c5f7f4fbdb63c8fc030214, type: 3}
 --- !u!4 &1167450250
 Transform:
   m_ObjectHideFlags: 0
@@ -781,7 +785,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 995812411927752260, guid: e2e5ef5d0e6420b49a9d7bafd217a860, type: 3}
       propertyPath: m_Name
-      value: Plateform
+      value: DarkPlateform
       objectReference: {fileID: 0}
     - target: {fileID: 995812411927752265, guid: e2e5ef5d0e6420b49a9d7bafd217a860, type: 3}
       propertyPath: m_RootOrder
