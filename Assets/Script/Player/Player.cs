@@ -20,7 +20,6 @@ public class Player : MonoBehaviour {
     
     [Header("Shooter")]
     public GameObject bulletPrefab;
-    public Transform gun;
     public float fireRate = 1f;
     private float nextFire = 0f;
     public float speedOfTheBullet = 20f;
@@ -72,7 +71,7 @@ public class Player : MonoBehaviour {
         return raycastHit2d.collider != null;
     }
     
-    private void HandleMovement() {
+    public void HandleMovement() {
         
         rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
     }
@@ -87,24 +86,11 @@ public class Player : MonoBehaviour {
         
     }
     
-    void OnDrawGizmosSelected()
-    {
-        if (IsGrounded())
-        {
-            Gizmos.color = Color.green;
-        }
-        else
-        {
-            Gizmos.color = Color.red;
-        }
-        
-        Gizmos.DrawCube(boxCollider.bounds.center, boxCollider.bounds.size);
-    }
 
-    private void Shooter()
+    public void Shooter()
     {
         
-        GameObject bullet = Instantiate(bulletPrefab, gun.transform.position, gun.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(2f, 0, 0), transform.rotation);
         
         Rigidbody2D Bulletrb = bullet.GetComponent<Rigidbody2D>();
         Bulletrb.velocity = new Vector2(speedOfTheBullet, Bulletrb.velocity.y);

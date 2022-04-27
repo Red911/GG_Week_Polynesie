@@ -6,19 +6,20 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour
 {
     playerzer player;
+    private Player players;
 
     [SerializeField] List<GameObject> prefabs = new List<GameObject>();
     void Start()
     {
-        player = GameObject.Instantiate(prefabs[Random.Range(0, prefabs.Count)], transform.position, transform.rotation).GetComponent<playerzer>();
+        players = GameObject.Instantiate(prefabs[Random.Range(0, prefabs.Count)], transform.position, transform.rotation).GetComponent<Player>();
     }
 
 
-    public void Move(InputAction.CallbackContext context)
+    public void Jump(InputAction.CallbackContext context)
     {
-       if(player)
+       if(players)
         {
-            player.Move(context.ReadValue<Vector2>());
+            players.Jump(context.ReadValue<float>());
         }
     }
 
@@ -26,12 +27,8 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if(player && context.started)
         {
-            player.Shoot();
+            players.Shooter();
         }
     }
-    // Update is called ozence per frame
-    void Update()
-    {
-        
-    }
+    
 }

@@ -530,7 +530,7 @@ MonoBehaviour:
   platformsLayerMask:
     serializedVersion: 2
     m_Bits: 8
-  jumpVelocity: 7
+  jumpVelocity: 5
   moveSpeed: 20
   rb: {fileID: 0}
   boxCollider: {fileID: 699721110}

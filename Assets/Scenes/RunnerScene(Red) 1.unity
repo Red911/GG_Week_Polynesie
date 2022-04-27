@@ -434,6 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf8f386865b60c4f96ab04157c03c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 5519196148866034171, guid: 2f69896924a6ffd4798b0988bf9b7275, type: 3}
   timeOffset: 0
   posOffset: {x: 2, y: 3, z: -1}
 --- !u!20 &519420031
@@ -515,7 +516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &699721109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,7 +537,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   boxCollider: {fileID: 699721110}
   bulletPrefab: {fileID: 5479771552474936214, guid: ee36ba322633d984ab577193300a040f, type: 3}
-  gun: {fileID: 1725086937}
   fireRate: 1
   speedOfTheBullet: 20
 --- !u!61 &699721110
@@ -1199,8 +1199,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2101024682}
+  - component: {fileID: 2101024683}
   m_Layer: 0
-  m_Name: PLayerManager
+  m_Name: PlayerManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1220,6 +1221,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2101024683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101024681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NotificationBehavior: 0
+  m_MaxPlayerCount: 2
+  m_AllowJoining: 1
+  m_JoinBehavior: 0
+  m_PlayerJoinedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_PlayerLeftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_JoinAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+    m_Reference: {fileID: 0}
+  m_PlayerPrefab: {fileID: 782625221953304548, guid: fe775d2be55498241b784151fe95b3d3, type: 3}
+  m_SplitScreen: 0
+  m_MaintainAspectRatioInSplitScreen: 0
+  m_FixedNumberOfSplitScreens: -1
+  m_SplitScreenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1001 &995812411904044883
 PrefabInstance:
   m_ObjectHideFlags: 0
