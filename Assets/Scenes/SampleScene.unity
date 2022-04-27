@@ -408,8 +408,8 @@ MonoBehaviour:
   platformsLayerMask:
     serializedVersion: 2
     m_Bits: 8
-  jumpVelocity: 5
-  moveSpeed: 10
+  jumpVelocity: 7
+  moveSpeed: 20
   rigidbody2d: {fileID: 699721113}
   boxCollider: {fileID: 699721110}
 --- !u!61 &699721110
@@ -562,6 +562,8 @@ MonoBehaviour:
   - {fileID: 81944993}
   - {fileID: 388348269}
   - {fileID: 1726531562}
+  maxHeightPoint: {fileID: 1588749989}
+  maxHeightChange: 3
 --- !u!4 &1167450250
 Transform:
   m_ObjectHideFlags: 0
@@ -572,7 +574,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.19, y: 9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1588749989}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -854,6 +857,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1588749988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1588749989}
+  m_Layer: 0
+  m_Name: maxHeightPoin
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1588749989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588749988}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1167450250}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1726531560
 GameObject:
