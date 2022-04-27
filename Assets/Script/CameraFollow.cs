@@ -1,26 +1,66 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CameraFollow : MonoBehaviour
 {
-    public GameObject player;
-    public float timeOffset;
-    public Vector3  posOffset;
-    private Vector3 velocity;
-    
+    [SerializeField]private Player player;
+    [SerializeField]private Player playerTwo;
+    private Camera mainCam;
 
-    void Start()
+    private void Awake()
     {
-        
+        mainCam = GetComponent<Camera>();
+    }
+    public void OnPlayerJoined(PlayerInput playerInput)
+    {
+        print("Player ID : " + playerInput.playerIndex);
+        if (playerInput.playerIndex == 0)
+        {
+            player = playerInput.GetComponent<Player>();
+        }
+        else if (playerInput.playerIndex == 1)
+        {
+            playerTwo = playerInput.GetComponent<Player>();
+        }
     }
     void Update()
     {
-        if (player.activeInHierarchy)
+        if(player&& playerTwo != null)
         {
-            transform.position = Vector3.SmoothDamp(transform.position, player.transform.position + posOffset, ref velocity, timeOffset);
+            FixedCameraFollowSmooth(mainCam,player.transform,playerTwo.transform);
         }
-        
-
     }
+    
+    public void FixedCameraFollowSmooth(Camera cam, Transform t1, Transform t2)
+    {
+        
+        float zoomFactor = 1.5f;
+        float followTimeDelta = 0.8f;
+ 
+        
+        Vector3 direction = (t1.position + t2.position) / 2f;
+        
+        float distance = (t1.position - t2.position).magnitude;
+        
+        Vector3 cameraDest = direction - cam.transform.forward * distance * zoomFactor;
+        
+        if (cam.orthographic)
+        {
+            cam.orthographicSize = distance;
+        }
+       
+        cam.transform.position = Vector3.Slerp(cam.transform.position, cameraDest, followTimeDelta);
+
+        if ((cameraDest - cam.transform.position).magnitude <= 0.05f)
+        {
+            cam.transform.position = cameraDest;
+        }
+            
+    }
+
+    
+    
+    
 }
