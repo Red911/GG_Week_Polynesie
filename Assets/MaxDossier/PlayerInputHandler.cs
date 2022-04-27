@@ -7,11 +7,16 @@ public class PlayerInputHandler : MonoBehaviour
 {
     playerzer player;
     private Player players;
+    private static int playerCount = 0;
 
     [SerializeField] List<GameObject> prefabs = new List<GameObject>();
     void Start()
     {
-        players = GameObject.Instantiate(prefabs[Random.Range(0, prefabs.Count)], transform.position, transform.rotation).GetComponent<Player>();
+        if (playerCount < 2)
+        {
+            players = GameObject.Instantiate(prefabs[playerCount++], transform.position, transform.rotation).GetComponent<Player>();
+        }
+        
     }
 
 
