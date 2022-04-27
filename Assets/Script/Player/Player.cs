@@ -38,25 +38,13 @@ public class Player : MonoBehaviour {
         boxCollider = GetComponent<BoxCollider2D>();
         
     }
-    public void Jump(InputAction.CallbackContext ctx)
-    {
-        if (ctx.started)
+    public void Jump(float value)
+    { 
+        if (IsGrounded())
         {
-            if (waitForStart)
-            {
-                waitForStart = false;
-            }
-            else 
-            {
-                if (IsGrounded())
-                {
-                    rb.velocity = Vector2.up * jumpVelocity;
-                }
-                
-                HandleMovement();
-            }
-            
+            rb.AddForce(new Vector2(0,value), ForceMode2D.Impulse);
         }
+         
     }
     
 
@@ -67,6 +55,15 @@ public class Player : MonoBehaviour {
         {
             nextFire = Time.time + fireRate;
             Shooter();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        HandleMovement();
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Jump(jumpVelocity);
         }
     }
 
