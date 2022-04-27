@@ -5,25 +5,31 @@ using UnityEngine.InputSystem;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField]private Player player;
-    [SerializeField]private Player playerTwo;
+    [SerializeField]private GameObject player;
+    [SerializeField]private GameObject playerTwo;
     private Camera mainCam;
 
     private void Awake()
     {
         mainCam = GetComponent<Camera>();
+        if (player && playerTwo == null)
+        {
+            player = GameObject.Find("Player1(Clone)").GetComponent<GameObject>(); 
+            playerTwo = GameObject.Find("Player2(Clone)").GetComponent<GameObject>();
+        }
+        
     }
     public void OnPlayerJoined(PlayerInput playerInput)
     {
-        print("Player ID : " + playerInput.playerIndex);
-        if (playerInput.playerIndex == 0)
-        {
-            player = playerInput.GetComponent<Player>();
-        }
-        else if (playerInput.playerIndex == 1)
-        {
-            playerTwo = playerInput.GetComponent<Player>();
-        }
+        // print("Player ID : " + playerInput.playerIndex);
+        // if (playerInput.playerIndex == 0)
+        // {
+        //     player = playerInput.GetComponent<Player>();
+        // }
+        // else if (playerInput.playerIndex == 1)
+        // {
+        //     playerTwo = playerInput.GetComponent<Player>();
+        // }
     }
     void Update()
     {
