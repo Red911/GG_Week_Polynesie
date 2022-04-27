@@ -6,23 +6,61 @@
             "id": "b332de82-39da-4099-a48c-92c2e54baa5d",
             "actions": [
                 {
-                    "name": "Move",
-                    "type": "Value",
-                    "id": "c747c2e0-0dd8-4255-8b3e-d84921e0345e",
-                    "expectedControlType": "Axis",
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "ba24a3db-704c-4255-ab86-2ca91c35933c",
+                    "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Fire",
+                    "type": "Button",
+                    "id": "51b5cdda-81aa-4c89-b281-16367ef9369f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
+                    "name": "Bubble",
+                    "type": "Button",
+                    "id": "93a5d052-43b0-403e-b58e-297005a16d11",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "e530eec9-0bf5-4abf-bf17-ecc956d16ecc",
-                    "path": "<Gamepad>/leftStick/x",
+                    "id": "05c95677-3b0d-467d-9a53-c87a8b004695",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5af9c295-7922-415d-b659-f35ac41810ae",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9d3f66af-656c-4e2a-99ea-e3ba0d519f8b",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Bubble",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
