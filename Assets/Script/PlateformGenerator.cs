@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlateformGenerator : MonoBehaviour
 {
@@ -40,6 +41,8 @@ public class PlateformGenerator : MonoBehaviour
         minHeight = transform.position.y;
         maxHeight = maxHeightPoint.position.y;
     }
+
+    
 
     
     void Update()
