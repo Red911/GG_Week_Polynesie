@@ -8,7 +8,8 @@ public class turretScript : MonoBehaviour
 
     public float Range;
     //la postion du joeur
-    public Transform[] Target;
+
+    public Transform Target;
 
 
     bool Detected = false;
@@ -21,6 +22,7 @@ public class turretScript : MonoBehaviour
     public GameObject Gun;
 
     public GameObject Bulette;
+    public GameObject Bulette2;
 
     public float FireRate;
 
@@ -29,44 +31,15 @@ public class turretScript : MonoBehaviour
     public Transform ShootPoint;
 
     public float Force;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < Target.Length; i++)
+        if (Target != null)
         {
-            Vector2 targetPos = Target[i].position;
+            Vector2 targetPos = Target.position;
             //Direction = la difference entrre la postion de la cible et de la tourelle
             Direction = targetPos - (Vector2)transform.position;
-        }
-        
-       
-        //pour capté notre player
-        RaycastHit2D rayInfo = Physics2D.Raycast(transform.position, Direction, Range);
-
-        if (rayInfo)
-        {
-            if (rayInfo.collider.gameObject.tag == "trap")
-            {
-                if (Detected == false)
-                {
-                    Detected = true;
-                    AlarmLight.GetComponent<SpriteRenderer>().color = Color.red;
-                }
-            }
-            else
-            {
-                if (Detected == true)
-                {
-                    Detected = false;
-                    AlarmLight.GetComponent<SpriteRenderer>().color = Color.green;
-                }
-            }
         }
 
         if(Detected)
@@ -74,13 +47,50 @@ public class turretScript : MonoBehaviour
             //transform.up tien en compte la rotation c pk le gun va pouvoir tourné sans changer sa positioon en X
             Gun.transform.up = Direction;
             //verifie si le tire est reelement superieur au prochain tire
-            if(Time.time > nextTimeToFire)
+            if(Time.time > nextTimeToFire && Input.GetKey(KeyCode.F))
             {
                 //la en gros on divise par 1 ou plus si le tire est est supperieur a Time.time
                 nextTimeToFire = Time.time + 1 / FireRate;
-                shoot();
+                shoot(); 
+                
+            }
+            if (Time.time > nextTimeToFire && Input.GetKey(KeyCode.H))
+            {
+                //la en gros on divise par 1 ou plus si le tire est est supperieur a Time.time
+                nextTimeToFire = Time.time + 1 / FireRate;
+                shoot2();
+                
             }
         }
+    }
+
+    bool IsTrap(Collider2D c) => c.gameObject.tag == "trap" || c.gameObject.tag == "trapWater";
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (IsTrap(collision))
+        {
+            Target = collision.transform;
+            if (Detected == false)
+            {
+                Detected = true;
+                AlarmLight.GetComponent<SpriteRenderer>().color = Color.red;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (IsTrap(collision))
+        {
+            Target = null;
+            if (Detected == true)
+            {
+                Detected = false;
+                AlarmLight.GetComponent<SpriteRenderer>().color = Color.green;
+            }
+        }
+       
     }
 
     void shoot()
@@ -88,7 +98,13 @@ public class turretScript : MonoBehaviour
       GameObject BulletteIns = Instantiate(Bulette, ShootPoint.position, Quaternion.identity);
         BulletteIns.GetComponent<Rigidbody2D>().AddForce(Direction * Force);
     }
-    
+
+    void shoot2()
+    {
+        GameObject BulletteIns = Instantiate(Bulette2, ShootPoint.position, Quaternion.identity);
+        BulletteIns.GetComponent<Rigidbody2D>().AddForce(Direction * Force);
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, Range);

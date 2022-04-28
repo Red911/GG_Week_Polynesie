@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour
 {
     playerzer player;
-    private Player players;
+    private static Player players;
     private static int playerCount = 0;
 
     [SerializeField] List<GameObject> prefabs = new List<GameObject>();

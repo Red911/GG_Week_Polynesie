@@ -6,14 +6,14 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour {
 
-    private static Player instance;
+    private static Player instance = null;
     
     [Header("Movement")]
     [SerializeField] private LayerMask platformsLayerMask;
     public float jumpVelocity = 100f;
     public float moveSpeed = 40f;
     
-    [SerializeField] private Rigidbody2D rb;
+    public Rigidbody2D rb;
     [SerializeField] private BoxCollider2D boxCollider;
     private bool waitForStart;
     private bool isDead;
@@ -74,6 +74,7 @@ public class Player : MonoBehaviour {
     public void HandleMovement() {
         
         rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
+        print("velocité x" + rb.velocity.x);
     }
     
     private void Die() {
