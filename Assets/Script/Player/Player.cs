@@ -62,6 +62,10 @@ public class Player : MonoBehaviour {
         {
             Die();
         }
+        if (moveSpeed <= 0)
+        {
+            moveSpeed = 1;
+        }
     }
 
     private void FixedUpdate()

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8196408250720831469}
   - component: {fileID: 7971122866861294085}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,6 +254,10 @@ PrefabInstance:
       propertyPath: Bulette2
       value: 
       objectReference: {fileID: 5479771552474936214, guid: b7e1c85c39d350941b5a5f09d5310930, type: 3}
+    - target: {fileID: 1535682263217480870, guid: c0db245a20c9e9f4dbed87645db5499d, type: 3}
+      propertyPath: FireRate
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1535682263217480871, guid: c0db245a20c9e9f4dbed87645db5499d, type: 3}
       propertyPath: m_RootOrder
       value: 0

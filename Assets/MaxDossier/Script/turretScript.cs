@@ -64,7 +64,7 @@ public class turretScript : MonoBehaviour
         }
     }
 
-    bool IsTrap(Collider2D c) => c.gameObject.tag == "trap" || c.gameObject.tag == "trapWater";
+    bool IsTrap(Collider2D c) => c.gameObject.tag == "trapFire" || c.gameObject.tag == "trapWater";
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
