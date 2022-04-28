@@ -1,41 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField]private GameObject player;
-    [SerializeField]private GameObject playerTwo;
+    [SerializeField]private Transform player;
+    [SerializeField]private Transform playerTwo;
     private Camera mainCam;
 
     private void Awake()
     {
         mainCam = GetComponent<Camera>();
-        if (player && playerTwo == null)
-        {
-            player = GameObject.Find("Player1(Clone)").GetComponent<GameObject>(); 
-            playerTwo = GameObject.Find("Player2(Clone)").GetComponent<GameObject>();
-        }
+        // if (player && playerTwo == null)
+        // {
+        //     player = GameObject.Find("Player1(Clone)").GetComponent<GameObject>(); 
+        //     playerTwo = GameObject.Find("Player2(Clone)").GetComponent<GameObject>();
+        // }
         
     }
     public void OnPlayerJoined(PlayerInput playerInput)
     {
-        // print("Player ID : " + playerInput.playerIndex);
-        // if (playerInput.playerIndex == 0)
-        // {
-        //     player = playerInput.GetComponent<Player>();
-        // }
-        // else if (playerInput.playerIndex == 1)
-        // {
-        //     playerTwo = playerInput.GetComponent<Player>();
-        // }
+        StartCoroutine(OnPlayerJoinedCoroutine(playerInput));
     }
+
+    private IEnumerator OnPlayerJoinedCoroutine(PlayerInput playerInput)
+    {
+        print("Player ID : " + playerInput.playerIndex);
+        PlayerInputHandler playerInputHandler = playerInput.GetComponent<PlayerInputHandler>();
+        yield return new WaitUntil(() => playerInputHandler.Players != null);
+        if (playerInput.playerIndex == 0)
+        {
+            player = playerInputHandler.Players.transform;
+            print("J1 ON : " + player.name);
+        }
+        else if (playerInput.playerIndex == 1)
+        {
+            playerTwo = playerInputHandler.Players.transform;
+            print("J2 ON : " + playerTwo.name);
+        }
+    }
+
     void Update()
     {
         if(player&& playerTwo != null)
         {
-            FixedCameraFollowSmooth(mainCam,player.transform,playerTwo.transform);
+            FixedCameraFollowSmooth(mainCam,player,playerTwo);
         }
     }
     

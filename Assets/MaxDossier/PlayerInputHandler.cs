@@ -10,6 +10,9 @@ public class PlayerInputHandler : MonoBehaviour
     private static int playerCount = 0;
 
     [SerializeField] List<GameObject> prefabs = new List<GameObject>();
+
+    public Player Players => players;
+    
     void Start()
     {
         if (playerCount < 2)
