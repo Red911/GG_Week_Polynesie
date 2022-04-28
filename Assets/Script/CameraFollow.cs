@@ -34,8 +34,6 @@ public class CameraFollow : MonoBehaviour
         else if (playerInput.playerIndex == 1)
         {
             playerTwo = playerInputHandler.Players.gameObject;
-           
-            
         }
     }
 
