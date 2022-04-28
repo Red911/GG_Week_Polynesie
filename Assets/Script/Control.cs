@@ -21,14 +21,6 @@ namespace GGWeek
             ""id"": ""3727c685-4539-49bd-b81f-49beece7e662"",
             ""actions"": [
                 {
-                    ""name"": ""Move"",
-                    ""type"": ""Value"",
-                    ""id"": ""3f47f068-7239-4f38-abcf-724eaf559ef7"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""Look"",
                     ""type"": ""Value"",
                     ""id"": ""4c2cbb7c-b49b-4a4c-9a4a-ea422b2ba937"",
@@ -54,138 +46,6 @@ namespace GGWeek
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""978bfe49-cc26-4a3d-ab7b-7d7a29327403"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""WASD"",
-                    ""id"": ""00ca640b-d935-4593-8157-c05846ea39b3"",
-                    ""path"": ""Dpad"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""e2062cb9-1b15-46a2-838c-2f8d72a0bdd9"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""8180e8bd-4097-4f4e-ab88-4523101a6ce9"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""320bffee-a40b-4347-ac70-c210eb8bc73a"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""1c5327b5-f71c-4f60-99c7-4e737386f1d1"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""d2581a9b-1d11-4566-b27d-b92aff5fabbc"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""2e46982e-44cc-431b-9f0b-c11910bf467a"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""fcfe95b8-67b9-4526-84b5-5d0bc98d6400"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""77bff152-3580-4b21-b6de-dcd0c7e41164"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8"",
-                    ""path"": ""<XRController>/{Primary2DAxis}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3ea4d645-4504-4529-b061-ab81934c3752"",
-                    ""path"": ""<Joystick>/stick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": """",
                     ""id"": ""c1f7a91b-d0fd-4a62-997e-7fb9b69bf235"",
@@ -284,19 +144,14 @@ namespace GGWeek
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""dbeb6b0b-1380-49e7-8a4c-5dd0a554fba4"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Thief"",
+            ""id"": ""8cad4d5e-2aff-44a9-af17-8728adc992ed"",
+            ""actions"": [],
+            ""bindings"": []
         },
         {
             ""name"": ""UI"",
@@ -865,15 +720,38 @@ namespace GGWeek
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Player"",
+            ""bindingGroup"": ""Player"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Thief"",
+            ""bindingGroup"": ""Thief"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
             // Player
             m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-            m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
             m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
             m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
             m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+            // Thief
+            m_Thief = asset.FindActionMap("Thief", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -935,7 +813,6 @@ namespace GGWeek
         // Player
         private readonly InputActionMap m_Player;
         private IPlayerActions m_PlayerActionsCallbackInterface;
-        private readonly InputAction m_Player_Move;
         private readonly InputAction m_Player_Look;
         private readonly InputAction m_Player_Fire;
         private readonly InputAction m_Player_Jump;
@@ -943,7 +820,6 @@ namespace GGWeek
         {
             private @Control m_Wrapper;
             public PlayerActions(@Control wrapper) { m_Wrapper = wrapper; }
-            public InputAction @Move => m_Wrapper.m_Player_Move;
             public InputAction @Look => m_Wrapper.m_Player_Look;
             public InputAction @Fire => m_Wrapper.m_Player_Fire;
             public InputAction @Jump => m_Wrapper.m_Player_Jump;
@@ -956,9 +832,6 @@ namespace GGWeek
             {
                 if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
                 {
-                    @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                    @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                    @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                     @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                     @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                     @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
@@ -972,9 +845,6 @@ namespace GGWeek
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
                 {
-                    @Move.started += instance.OnMove;
-                    @Move.performed += instance.OnMove;
-                    @Move.canceled += instance.OnMove;
                     @Look.started += instance.OnLook;
                     @Look.performed += instance.OnLook;
                     @Look.canceled += instance.OnLook;
@@ -988,6 +858,31 @@ namespace GGWeek
             }
         }
         public PlayerActions @Player => new PlayerActions(this);
+
+        // Thief
+        private readonly InputActionMap m_Thief;
+        private IThiefActions m_ThiefActionsCallbackInterface;
+        public struct ThiefActions
+        {
+            private @Control m_Wrapper;
+            public ThiefActions(@Control wrapper) { m_Wrapper = wrapper; }
+            public InputActionMap Get() { return m_Wrapper.m_Thief; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(ThiefActions set) { return set.Get(); }
+            public void SetCallbacks(IThiefActions instance)
+            {
+                if (m_Wrapper.m_ThiefActionsCallbackInterface != null)
+                {
+                }
+                m_Wrapper.m_ThiefActionsCallbackInterface = instance;
+                if (instance != null)
+                {
+                }
+            }
+        }
+        public ThiefActions @Thief => new ThiefActions(this);
 
         // UI
         private readonly InputActionMap m_UI;
@@ -1138,12 +1033,32 @@ namespace GGWeek
                 return asset.controlSchemes[m_XRSchemeIndex];
             }
         }
+        private int m_PlayerSchemeIndex = -1;
+        public InputControlScheme PlayerScheme
+        {
+            get
+            {
+                if (m_PlayerSchemeIndex == -1) m_PlayerSchemeIndex = asset.FindControlSchemeIndex("Player");
+                return asset.controlSchemes[m_PlayerSchemeIndex];
+            }
+        }
+        private int m_ThiefSchemeIndex = -1;
+        public InputControlScheme ThiefScheme
+        {
+            get
+            {
+                if (m_ThiefSchemeIndex == -1) m_ThiefSchemeIndex = asset.FindControlSchemeIndex("Thief");
+                return asset.controlSchemes[m_ThiefSchemeIndex];
+            }
+        }
         public interface IPlayerActions
         {
-            void OnMove(InputAction.CallbackContext context);
             void OnLook(InputAction.CallbackContext context);
             void OnFire(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
+        }
+        public interface IThiefActions
+        {
         }
         public interface IUIActions
         {
