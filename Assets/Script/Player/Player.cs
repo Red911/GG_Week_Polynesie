@@ -83,9 +83,12 @@ public class Player : MonoBehaviour {
     }
     
     public void HandleMovement() {
+       if(PlayerInputHandler.playerCount == 2 && Input.GetKey(KeyCode.Space))
+        {
+            rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
+            print("velocité x : " + rb.velocity.x);
+        }
         
-        rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
-        print("velocité x : " + rb.velocity.x);
     }
     
     private void Die() {
