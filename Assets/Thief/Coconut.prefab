@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 6499254723415098305}
   - component: {fileID: 480546561135129637}
   - component: {fileID: 7142708757125944739}
+  - component: {fileID: 8904784219865021618}
   m_Layer: 0
   m_Name: Coconut
-  m_TagString: Untagged
+  m_TagString: trapFire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,3 +122,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &8904784219865021618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6499254723415098306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbcf105a194f88340ab1ac8cb8dd2492, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

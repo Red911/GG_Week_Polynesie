@@ -9,6 +9,7 @@ TagManager:
   - trap
   - trapWater
   - trapFire
+  - Ground
   layers:
   - Default
   - TransparentFX
