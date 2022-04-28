@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4936199192841116902}
   - component: {fileID: 4811014926586639951}
   - component: {fileID: 7096887841437418051}
-  - component: {fileID: -5425273832707280739}
+  - component: {fileID: -5566830448455516350}
   m_Layer: 6
   m_Name: WaterBall
   m_TagString: Fire
@@ -230,7 +230,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &-5425273832707280739
+--- !u!114 &-5566830448455516350
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,7 +239,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5479771552474936214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2be259fc56de9b4d9d8b09785644a70, type: 3}
+  m_Script: {fileID: 11500000, guid: ed4d53dc1c59f1e449bf4c8c1d1df337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: -2261642100704618233, guid: 2f69896924a6ffd4798b0988bf9b7275, type: 3}
+  addSpeed: 1
+  RemoveSpeed: 1

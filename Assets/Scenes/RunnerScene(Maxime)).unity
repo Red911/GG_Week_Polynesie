@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5040920256132050641, guid: 026dce2d3ff56b64aac2163278d7b333, type: 3}
       propertyPath: m_TagString
-      value: trap
+      value: trapWater
       objectReference: {fileID: 0}
     - target: {fileID: 5040920256132050643, guid: 026dce2d3ff56b64aac2163278d7b333, type: 3}
       propertyPath: m_Size.x
@@ -394,8 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 782625221953304548, guid: fe775d2be55498241b784151fe95b3d3, type: 3}
-  timeOffset: 0
-  posOffset: {x: 2, y: 3, z: -1}
+  playerTwo: {fileID: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -484,13 +483,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_MaxPlayerCount: 2
   m_AllowJoining: 1
   m_JoinBehavior: 0
   m_PlayerJoinedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 519420030}
+        m_TargetAssemblyTypeName: CameraFollow, Assembly-CSharp
+        m_MethodName: OnPlayerJoined
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_PlayerLeftEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -594,6 +605,10 @@ PrefabInstance:
     - target: {fileID: 5040920256132050641, guid: 026dce2d3ff56b64aac2163278d7b333, type: 3}
       propertyPath: m_Name
       value: Square (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040920256132050641, guid: 026dce2d3ff56b64aac2163278d7b333, type: 3}
+      propertyPath: m_TagString
+      value: trapFire
       objectReference: {fileID: 0}
     - target: {fileID: 5040920256132050643, guid: 026dce2d3ff56b64aac2163278d7b333, type: 3}
       propertyPath: m_Size.x
