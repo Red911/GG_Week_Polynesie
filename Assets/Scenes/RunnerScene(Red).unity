@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NotificationBehavior: 2
-  m_MaxPlayerCount: 2
+  m_MaxPlayerCount: 3
   m_AllowJoining: 1
   m_JoinBehavior: 2
   m_PlayerJoinedEvent:
@@ -1059,6 +1059,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d0ded0e4ca40547b60435ac54cc1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerOneJoinAction:
+    m_Name: Player One Join
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: cbb7440f-5b5f-41b0-a54f-3219d4eb9473
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: b65760ef-2dfa-4922-b933-436f02bd9649
+      m_Path: <Keyboard>/j
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player One Join
+      m_Flags: 0
+  playerTwoJoinAction:
+    m_Name: Player Two Join
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 73fdd499-ac04-42d5-82d3-f42a95f27a27
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 3cb82ce1-73ae-48e0-9335-011805fbb433
+      m_Path: <Gamepad>/buttonSouth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Two Join
+      m_Flags: 0
 --- !u!1001 &995812411904044883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1179,6 +1211,10 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 2237230216357555643, guid: 6bdf7162475c2ba42b181d52db08969f, type: 3}
+      propertyPath: m_Name
+      value: Spike
+      objectReference: {fileID: 0}
     - target: {fileID: 3081784015154784990, guid: 6bdf7162475c2ba42b181d52db08969f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.16

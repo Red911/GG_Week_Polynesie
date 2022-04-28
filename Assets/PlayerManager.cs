@@ -8,18 +8,37 @@ public class PlayerManager : MonoBehaviour
 {
     private PlayerInputManager playerInputManager;
     private InputDevice playerInput;
+
+    [SerializeField] private InputAction playerOneJoinAction;
+    [SerializeField] private InputAction playerTwoJoinAction;
+    private InputDevice keyboard;
+    private InputDevice gamepad;
+
     private void Awake()
     {
         playerInputManager = GetComponent<PlayerInputManager>();
+        keyboard = InputSystem.devices.First(i => i.name == "Keyboard");
+        gamepad = InputSystem.devices.First(i => i.name == "XInputControllerWindows");
+        playerOneJoinAction.Enable();
+        playerTwoJoinAction.Enable();
+
     }
 
-    void Update()
+    void OnEnable()
     {
-        var keyboard = InputSystem.devices.First(i => i.name == "Keyboard");
-        var gamepad = InputSystem.devices.First(i => i.name == "XInputControllerWindows");
-        if (Input.GetKey(KeyCode.P))
-        {  
-            playerInputManager.JoinPlayer(0, -1, null, keyboard);
-        }
+        playerOneJoinAction.performed += (e) => JoinPlayer(0, "Player", keyboard);
+        playerTwoJoinAction.performed += (e) => JoinPlayer(1, "Thief", gamepad);
+    }
+
+    void OnDisable()
+    {
+        playerOneJoinAction.performed -= (e) => JoinPlayer(0, "Player", keyboard);
+        playerTwoJoinAction.performed -= (e) => JoinPlayer(1, "Thief", gamepad);
+    }
+
+    private void JoinPlayer(int id, string name, InputDevice device)
+    {
+        print("join");
+        playerInputManager.JoinPlayer(id, -1, name, device);
     }
 }
