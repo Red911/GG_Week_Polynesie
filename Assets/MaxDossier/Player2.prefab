@@ -211,6 +211,10 @@ MonoBehaviour:
   spikeSpawn: {fileID: 3398167301211625957}
   spikeprefab: {fileID: 7371228854642385868, guid: 975b5f8939649664a9591b3bb9a7b2c2, type: 3}
   fireRate: 4
+  firedItemSpawn: {fileID: 704474743649193506}
+  firedItemPrefab: {fileID: 7837265968382079404, guid: 00e29c9d647a3cb40bd26348814578a4, type: 3}
+  firedItemRate: 3
+  launchForce: 30
 --- !u!114 &-4956566845349203393
 MonoBehaviour:
   m_ObjectHideFlags: 0

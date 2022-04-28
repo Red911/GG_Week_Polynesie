@@ -38,7 +38,6 @@ public class PlayerManager : MonoBehaviour
 
     private void JoinPlayer(int id, string name, InputDevice device)
     {
-        print("join");
         playerInputManager.JoinPlayer(id, -1, name, device);
     }
 }
