@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2812138767443758460}
   - component: {fileID: 5259719954387643771}
-  - component: {fileID: -2390822296350373126}
-  - component: {fileID: -584381540972608496}
   - component: {fileID: 1853370006682292618}
   - component: {fileID: -6908214739812275089}
+  - component: {fileID: 5972421464743375708}
+  - component: {fileID: -4956566845349203393}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -86,42 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2390822296350373126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5519196148866034171}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5250fbfff78e64746aad32777ceaded9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  bullet: {fileID: 5526618491203305031, guid: 4c0a665ab2263b241b4c5a21abe9bb5b, type: 3}
---- !u!114 &-584381540972608496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5519196148866034171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d85782c4224b66049b225b9a91486c65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platformsLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  jumpVelocity: 3
-  moveSpeed: 20
-  rb: {fileID: 1853370006682292618}
-  boxCollider: {fileID: -6908214739812275089}
-  bulletPrefab: {fileID: 5479771552474936214, guid: ee36ba322633d984ab577193300a040f, type: 3}
-  fireRate: 1
-  speedOfTheBullet: 20
 --- !u!50 &1853370006682292618
 Rigidbody2D:
   serializedVersion: 4
@@ -169,3 +133,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5972421464743375708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5519196148866034171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8df1b114950e1174eaa917674f5c9355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+--- !u!114 &-4956566845349203393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5519196148866034171}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d85782c4224b66049b225b9a91486c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformsLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpVelocity: 100
+  moveSpeed: 40
+  rb: {fileID: 0}
+  boxCollider: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+  fireRate: 1
+  speedOfTheBullet: 20
