@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField]private GameObject player;
+    public GameObject player;
     [SerializeField]private GameObject playerTwo;
     private Camera mainCam;
 

@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BulletScript : MonoBehaviour
 {
-    public Player player;
+ 
+    CameraFollow cam;
     // Start is called before the first frame update
     void Start()
     {
-        
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>();
     }
 
     // Update is called once per frame
@@ -17,14 +19,18 @@ public class BulletScript : MonoBehaviour
         
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "trap")
         {
-            player.moveSpeed -= 1;
+            cam.player.GetComponent<Player>().moveSpeed -= 1;
             Debug.Log("ta perdu dla vie");
         }
 
         Destroy(this.gameObject);
     }
+
+    
+
 }
