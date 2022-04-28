@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour {
 
     private static Player instance;
+    private SpriteRenderer sprite;
     
     [Header("Movement")]
     [SerializeField] private LayerMask platformsLayerMask;
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour {
 
     private void Start()
     {
+        sprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         
@@ -55,6 +57,11 @@ public class Player : MonoBehaviour {
             nextFire = Time.time + fireRate;
             Shooter();
         }
+        if (sprite.isVisible == false)
+        {
+            Die();
+            
+        }
     }
 
     private void FixedUpdate()
@@ -76,16 +83,13 @@ public class Player : MonoBehaviour {
         rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
     }
     
-    private void Die() {
+    public void Die() {
         isDead = true;
         rb.velocity = Vector3.zero;
-    }
+        sprite.enabled = false;
+        print("Die");
 
-    public static void Die_Static() {
-        instance.Die();
-        
     }
-    
 
     public void Shooter()
     {

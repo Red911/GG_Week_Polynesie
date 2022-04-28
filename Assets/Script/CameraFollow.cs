@@ -6,20 +6,15 @@ using UnityEngine.InputSystem;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField]private Transform player;
-    [SerializeField]private Transform playerTwo;
+    [SerializeField]private GameObject player;
+    [SerializeField]private GameObject playerTwo;
     private Camera mainCam;
 
     private void Awake()
     {
         mainCam = GetComponent<Camera>();
-        // if (player && playerTwo == null)
-        // {
-        //     player = GameObject.Find("Player1(Clone)").GetComponent<GameObject>(); 
-        //     playerTwo = GameObject.Find("Player2(Clone)").GetComponent<GameObject>();
-        // }
-        
     }
+    
     public void OnPlayerJoined(PlayerInput playerInput)
     {
         StartCoroutine(OnPlayerJoinedCoroutine(playerInput));
@@ -27,18 +22,20 @@ public class CameraFollow : MonoBehaviour
 
     private IEnumerator OnPlayerJoinedCoroutine(PlayerInput playerInput)
     {
-        print("Player ID : " + playerInput.playerIndex);
+       
         PlayerInputHandler playerInputHandler = playerInput.GetComponent<PlayerInputHandler>();
         yield return new WaitUntil(() => playerInputHandler.Players != null);
         if (playerInput.playerIndex == 0)
         {
-            player = playerInputHandler.Players.transform;
-            print("J1 ON : " + player.name);
+            player = playerInputHandler.Players.gameObject;
+            
+            
         }
         else if (playerInput.playerIndex == 1)
         {
-            playerTwo = playerInputHandler.Players.transform;
-            print("J2 ON : " + playerTwo.name);
+            playerTwo = playerInputHandler.Players.gameObject;
+           
+            
         }
     }
 
@@ -46,8 +43,9 @@ public class CameraFollow : MonoBehaviour
     {
         if(player&& playerTwo != null)
         {
-            FixedCameraFollowSmooth(mainCam,player,playerTwo);
+            FixedCameraFollowSmooth(mainCam,player.transform,playerTwo.transform);
         }
+        
     }
     
     public void FixedCameraFollowSmooth(Camera cam, Transform t1, Transform t2)
@@ -74,7 +72,11 @@ public class CameraFollow : MonoBehaviour
         {
             cam.transform.position = cameraDest;
         }
-            
+
+        if (cam.orthographicSize >= 30f)
+        {
+            cam.orthographicSize = 30f;
+        }
     }
 
     

@@ -116,7 +116,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   jumpVelocity: 3
-  moveSpeed: 20
+  moveSpeed: 1
   rb: {fileID: -8196408250720831469}
   boxCollider: {fileID: 7971122866861294085}
   bulletPrefab: {fileID: 5479771552474936214, guid: ee36ba322633d984ab577193300a040f, type: 3}
