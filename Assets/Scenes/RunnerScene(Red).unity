@@ -522,7 +522,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5972421464743375708, guid: 67a71609365b6824f9d0c5a4d3e9a82d, type: 3}
   m_PrefabInstance: {fileID: 917433358}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1373500852}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8df1b114950e1174eaa917674f5c9355, type: 3}
@@ -1091,31 +1091,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2812138767443758460, guid: 67a71609365b6824f9d0c5a4d3e9a82d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.852194
+      value: -16.4
       objectReference: {fileID: 0}
     - target: {fileID: 2812138767443758460, guid: 67a71609365b6824f9d0c5a4d3e9a82d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.689769
-      objectReference: {fileID: 0}
-    - target: {fileID: 2812138767443758460, guid: 67a71609365b6824f9d0c5a4d3e9a82d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2812138767443758460, guid: 67a71609365b6824f9d0c5a4d3e9a82d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2812138767443758460, guid: 67a71609365b6824f9d0c5a4d3e9a82d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2812138767443758460, guid: 67a71609365b6824f9d0c5a4d3e9a82d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2812138767443758460, guid: 67a71609365b6824f9d0c5a4d3e9a82d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
+      value: 5.35
       objectReference: {fileID: 0}
     - target: {fileID: 2812138767443758460, guid: 67a71609365b6824f9d0c5a4d3e9a82d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1456,6 +1436,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298053408}
   m_CullTransparentMesh: 1
+--- !u!1 &1373500852 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5519196148866034171, guid: 67a71609365b6824f9d0c5a4d3e9a82d, type: 3}
+  m_PrefabInstance: {fileID: 917433358}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1546835058
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,6 +2383,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -35.4
       objectReference: {fileID: 0}
+    - target: {fileID: 1380407668017341221, guid: 6bdf7162475c2ba42b181d52db08969f, type: 3}
+      propertyPath: playerTwo
+      value: 
+      objectReference: {fileID: 1373500852}
     - target: {fileID: 1380407668017341223, guid: 6bdf7162475c2ba42b181d52db08969f, type: 3}
       propertyPath: m_Name
       value: Main Camera

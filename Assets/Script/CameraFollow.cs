@@ -9,12 +9,13 @@ using UnityEngine.SceneManagement;
 public class CameraFollow : MonoBehaviour
 {
     public GameObject player;
-    [SerializeField]private GameObject playerTwo;
+    public GameObject playerTwo;
     private Camera mainCam;
 
     private void Awake()
     {
         mainCam = GetComponent<Camera>();
+        
     }
     
     public void OnPlayerJoined(PlayerInput playerInput)
@@ -30,13 +31,9 @@ public class CameraFollow : MonoBehaviour
         if (playerInput.playerIndex == 0)
         {
             player = playerInputHandler.Players.gameObject;
-            
-            
+             
         }
-        else if (playerInput.playerIndex == 1)
-        {
-            playerTwo = playerInputHandler.Players.gameObject;
-        }
+        
     }
 
     void Update()
