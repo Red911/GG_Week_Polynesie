@@ -2,6 +2,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 public class Player : MonoBehaviour {
@@ -17,7 +18,7 @@ public class Player : MonoBehaviour {
     
     
     public Rigidbody2D rb;
-    [SerializeField] private BoxCollider2D boxCollider;
+    [SerializeField] private CapsuleCollider2D boxCollider;
     private bool waitForStart;
     private bool isDead;
     
@@ -38,7 +39,7 @@ public class Player : MonoBehaviour {
     {
         sprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider = GetComponent<CapsuleCollider2D>();
         anim = GetComponent<Animator>();
 
     }
@@ -104,6 +105,8 @@ public class Player : MonoBehaviour {
     private void Die() {
         isDead = true;
         rb.velocity = Vector3.zero;
+        SceneManager.LoadScene(2);
+
     }
 
     public static void Die_Static() {

@@ -73,9 +73,9 @@ public class CameraFollow : MonoBehaviour
             cam.transform.position = cameraDest;
         }
 
-        if (cam.orthographicSize >= 20f)
+        if (cam.orthographicSize >= 15f)
         {
-            cam.orthographicSize = 20f;
+            cam.orthographicSize = 15f;
         }
         
         if (cam.orthographicSize <= 3f)
