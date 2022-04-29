@@ -7,6 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
+    CameraFollow cam;
+    
+    private GameObject playerOne;
+    private GameObject playerTwo;
+    private ThiefPlayer thief;
+    
     private static Player instance = null;
     private SpriteRenderer sprite;
     public Animator anim;
@@ -33,6 +39,9 @@ public class Player : MonoBehaviour {
         waitForStart = true;
         isDead = false;
         
+        playerTwo = GameObject.FindWithTag("thief").GetComponent<GameObject>();
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>();
+        thief = GameObject.FindWithTag("thief").GetComponent<ThiefPlayer>();
     }
 
     private void Start()
@@ -94,12 +103,10 @@ public class Player : MonoBehaviour {
     }
     
     public void HandleMovement() {
-       if(PlayerInputHandler.playerCount == 2 && Input.GetKey(KeyCode.Space))
-       {
+       
            rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
            anim.SetFloat("velocityX", rb.velocity.x);
-       }
-        
+       
     }
     
     private void Die() {
@@ -125,6 +132,8 @@ public class Player : MonoBehaviour {
         Destroy(bullet, 3f);
         
     }
+    
+    
 
     
 }

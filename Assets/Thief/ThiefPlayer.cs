@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class ThiefPlayer : MonoBehaviour
 {
+    public GameObject playerOne;
+    private GameObject playerTwo;
+    
+    
     public float moveSpeed = 10f;
     private Rigidbody2D rb;
     private Animator anim;
@@ -33,20 +37,24 @@ public class ThiefPlayer : MonoBehaviour
     private float cooldownTimeSpike;
     private float cooldownTimerSpike = 0f;
     
+    CameraFollow cam;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         imageCooldownFiredItem = GameObject.FindWithTag("SkillOne").GetComponent<Image>();
         imageCooldownSpike = GameObject.FindWithTag("SkillTwo").GetComponent<Image>();
-        
-        
-        
+
         imageCooldownFiredItem.fillAmount = 0f;
         imageCooldownSpike.fillAmount = 0f;
 
         cooldownTimeFiredItem = firedItemRate;
         cooldownTimeSpike = fireRate;
+
+        playerTwo = GameObject.FindWithTag("thief").GetComponent<GameObject>();
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>();
+        
     }
 
     void Update()
@@ -82,11 +90,8 @@ public class ThiefPlayer : MonoBehaviour
     }
     private void HandleMovement() 
     {
-        if(PlayerInputHandler.playerCount == 2 && Input.GetKey(KeyCode.Space))
-        {
-            rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
-            anim.SetFloat("velocityX", rb.velocity.x);
-        }
+        rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
+        anim.SetFloat("velocityX", rb.velocity.x);
         
     }
 
@@ -154,4 +159,9 @@ public class ThiefPlayer : MonoBehaviour
         }
     }
 
+    public void OnPlayerJoined()
+    {
+        playerOne = cam.player.gameObject;
+    }
+    
 }
