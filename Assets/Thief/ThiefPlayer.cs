@@ -82,13 +82,12 @@ public class ThiefPlayer : MonoBehaviour
     }
     private void HandleMovement() 
     {
-        // if(PlayerInputHandler.playerCount == 2 && Input.GetKey(KeyCode.Space))
-        // {
-        //     rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
-        //     
-        // }
-        rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
-        anim.SetFloat("velocityX", rb.velocity.x);
+        if(PlayerInputHandler.playerCount == 2 && Input.GetKey(KeyCode.Space))
+        {
+            rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
+            anim.SetFloat("velocityX", rb.velocity.x);
+        }
+        
     }
 
     

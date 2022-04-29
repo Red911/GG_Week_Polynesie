@@ -111,22 +111,11 @@ namespace GGWeek
                 },
                 {
                     ""name"": """",
-                    ""id"": ""5416611a-50b2-47d4-b11b-42c270fda835"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Thief"",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""6b9e2233-f37f-4a54-8f2b-a97700d40283"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Player"",
                     ""action"": ""Water"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -169,7 +158,7 @@ namespace GGWeek
                     ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Thief"",
                     ""action"": ""Fired Item"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -180,7 +169,7 @@ namespace GGWeek
                     ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Thief"",
                     ""action"": ""Spike"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -191,7 +180,7 @@ namespace GGWeek
                     ""path"": ""<Keyboard>/m"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Thief"",
                     ""action"": ""Coconuts"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
