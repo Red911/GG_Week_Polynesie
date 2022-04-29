@@ -7,6 +7,7 @@ public class ThiefPlayer : MonoBehaviour
 {
     public float moveSpeed = 10f;
     private Rigidbody2D rb;
+    private Animator anim;
 
     [Header("Spike")] 
     public bool usedSpike;
@@ -35,6 +36,12 @@ public class ThiefPlayer : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        imageCooldownFiredItem = GameObject.FindWithTag("SkillOne").GetComponent<Image>();
+        imageCooldownSpike = GameObject.FindWithTag("SkillTwo").GetComponent<Image>();
+        
+        
+        
         imageCooldownFiredItem.fillAmount = 0f;
         imageCooldownSpike.fillAmount = 0f;
 
@@ -81,6 +88,7 @@ public class ThiefPlayer : MonoBehaviour
         //     
         // }
         rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
+        anim.SetFloat("velocityX", rb.velocity.x);
     }
 
     

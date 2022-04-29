@@ -113,8 +113,67 @@
         {
             "name": "Thief",
             "id": "8cad4d5e-2aff-44a9-af17-8728adc992ed",
-            "actions": [],
-            "bindings": []
+            "actions": [
+                {
+                    "name": "Fired Item",
+                    "type": "Button",
+                    "id": "a7eebc79-9ea7-4239-8891-657d3f6aa17f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Spike",
+                    "type": "Button",
+                    "id": "ab6d2484-0158-4dee-80b5-1c4e5e857f68",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Coconuts",
+                    "type": "Button",
+                    "id": "bbe13793-2f25-4b54-a67c-5c456d5a20da",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bfa4dab5-09d3-47ae-a4d3-cf02c1d53cd2",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fired Item",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "833c4f3c-b802-4d36-b9cc-9fa571af73c2",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spike",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8ac710fd-711e-4c0a-8560-e1e864ea8d34",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Coconuts",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         },
         {
             "name": "UI",

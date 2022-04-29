@@ -75,6 +75,11 @@ public class CameraFollow : MonoBehaviour
         {
             cam.orthographicSize = 30f;
         }
+        
+        if (cam.orthographicSize <= 5f)
+        {
+            cam.orthographicSize = 5f;
+        }
     }
 
     

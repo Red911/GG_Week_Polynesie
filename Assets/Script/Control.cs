@@ -128,8 +128,67 @@ namespace GGWeek
         {
             ""name"": ""Thief"",
             ""id"": ""8cad4d5e-2aff-44a9-af17-8728adc992ed"",
-            ""actions"": [],
-            ""bindings"": []
+            ""actions"": [
+                {
+                    ""name"": ""Fired Item"",
+                    ""type"": ""Button"",
+                    ""id"": ""a7eebc79-9ea7-4239-8891-657d3f6aa17f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Spike"",
+                    ""type"": ""Button"",
+                    ""id"": ""ab6d2484-0158-4dee-80b5-1c4e5e857f68"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Coconuts"",
+                    ""type"": ""Button"",
+                    ""id"": ""bbe13793-2f25-4b54-a67c-5c456d5a20da"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""bfa4dab5-09d3-47ae-a4d3-cf02c1d53cd2"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fired Item"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""833c4f3c-b802-4d36-b9cc-9fa571af73c2"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Spike"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8ac710fd-711e-4c0a-8560-e1e864ea8d34"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Coconuts"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         },
         {
             ""name"": ""UI"",
@@ -740,6 +799,9 @@ namespace GGWeek
             m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
             // Thief
             m_Thief = asset.FindActionMap("Thief", throwIfNotFound: true);
+            m_Thief_FiredItem = m_Thief.FindAction("Fired Item", throwIfNotFound: true);
+            m_Thief_Spike = m_Thief.FindAction("Spike", throwIfNotFound: true);
+            m_Thief_Coconuts = m_Thief.FindAction("Coconuts", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -850,10 +912,16 @@ namespace GGWeek
         // Thief
         private readonly InputActionMap m_Thief;
         private IThiefActions m_ThiefActionsCallbackInterface;
+        private readonly InputAction m_Thief_FiredItem;
+        private readonly InputAction m_Thief_Spike;
+        private readonly InputAction m_Thief_Coconuts;
         public struct ThiefActions
         {
             private @Control m_Wrapper;
             public ThiefActions(@Control wrapper) { m_Wrapper = wrapper; }
+            public InputAction @FiredItem => m_Wrapper.m_Thief_FiredItem;
+            public InputAction @Spike => m_Wrapper.m_Thief_Spike;
+            public InputAction @Coconuts => m_Wrapper.m_Thief_Coconuts;
             public InputActionMap Get() { return m_Wrapper.m_Thief; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -863,10 +931,28 @@ namespace GGWeek
             {
                 if (m_Wrapper.m_ThiefActionsCallbackInterface != null)
                 {
+                    @FiredItem.started -= m_Wrapper.m_ThiefActionsCallbackInterface.OnFiredItem;
+                    @FiredItem.performed -= m_Wrapper.m_ThiefActionsCallbackInterface.OnFiredItem;
+                    @FiredItem.canceled -= m_Wrapper.m_ThiefActionsCallbackInterface.OnFiredItem;
+                    @Spike.started -= m_Wrapper.m_ThiefActionsCallbackInterface.OnSpike;
+                    @Spike.performed -= m_Wrapper.m_ThiefActionsCallbackInterface.OnSpike;
+                    @Spike.canceled -= m_Wrapper.m_ThiefActionsCallbackInterface.OnSpike;
+                    @Coconuts.started -= m_Wrapper.m_ThiefActionsCallbackInterface.OnCoconuts;
+                    @Coconuts.performed -= m_Wrapper.m_ThiefActionsCallbackInterface.OnCoconuts;
+                    @Coconuts.canceled -= m_Wrapper.m_ThiefActionsCallbackInterface.OnCoconuts;
                 }
                 m_Wrapper.m_ThiefActionsCallbackInterface = instance;
                 if (instance != null)
                 {
+                    @FiredItem.started += instance.OnFiredItem;
+                    @FiredItem.performed += instance.OnFiredItem;
+                    @FiredItem.canceled += instance.OnFiredItem;
+                    @Spike.started += instance.OnSpike;
+                    @Spike.performed += instance.OnSpike;
+                    @Spike.canceled += instance.OnSpike;
+                    @Coconuts.started += instance.OnCoconuts;
+                    @Coconuts.performed += instance.OnCoconuts;
+                    @Coconuts.canceled += instance.OnCoconuts;
                 }
             }
         }
@@ -1047,6 +1133,9 @@ namespace GGWeek
         }
         public interface IThiefActions
         {
+            void OnFiredItem(InputAction.CallbackContext context);
+            void OnSpike(InputAction.CallbackContext context);
+            void OnCoconuts(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

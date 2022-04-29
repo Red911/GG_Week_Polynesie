@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: -6908214739812275089}
   - component: {fileID: 5972421464743375708}
   - component: {fileID: -4956566845349203393}
+  - component: {fileID: 9163318415202753718}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -137,8 +138,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 60207cf9a451dfa4e84c5939cf53a8ec, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -178,22 +179,22 @@ BoxCollider2D:
   m_GameObject: {fileID: 5519196148866034171}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 12133bbc62dcc744ebe2333fca68dce1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.056735992, y: 0.050383925}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.0933332, y: 3.3333333}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8245106, y: 2.6755207}
   m_EdgeRadius: 0
 --- !u!114 &5972421464743375708
 MonoBehaviour:
@@ -208,6 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  usedSpike: 0
   spikeSpawn: {fileID: 3398167301211625957}
   spikeprefab: {fileID: 7371228854642385868, guid: 975b5f8939649664a9591b3bb9a7b2c2, type: 3}
   fireRate: 4
@@ -215,6 +217,9 @@ MonoBehaviour:
   firedItemPrefab: {fileID: 7837265968382079404, guid: 00e29c9d647a3cb40bd26348814578a4, type: 3}
   firedItemRate: 3
   launchForce: 30
+  usedFiredItem: 0
+  imageCooldownFiredItem: {fileID: 0}
+  imageCooldownSpike: {fileID: 0}
 --- !u!114 &-4956566845349203393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,3 +242,22 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   fireRate: 1
   speedOfTheBullet: 20
+--- !u!95 &9163318415202753718
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5519196148866034171}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d1e11f3ee8bd6804bb1b2d34c3234879, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
