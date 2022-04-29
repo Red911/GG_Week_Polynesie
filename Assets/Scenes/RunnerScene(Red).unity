@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85782c4224b66049b225b9a91486c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   platformsLayerMask:
     serializedVersion: 2
     m_Bits: 8
@@ -484,7 +485,7 @@ Transform:
   m_Children:
   - {fileID: 1725086937}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &699721113
 Rigidbody2D:
@@ -667,7 +668,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1725086936
 GameObject:
@@ -806,7 +807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2330417661226021976, guid: 842b11e6a7b5b3747945c916308dfdd7, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2330417661226021976, guid: 842b11e6a7b5b3747945c916308dfdd7, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1164,7 +1165,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1400634662033387461, guid: 98448a0463fd6f946a0d6985b1b9161e, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1400634662033387461, guid: 98448a0463fd6f946a0d6985b1b9161e, type: 3}
       propertyPath: m_LocalPosition.x

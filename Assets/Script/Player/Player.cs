@@ -2,19 +2,19 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 
 public class Player : MonoBehaviour {
 
-    public GameObject UIObject;
     private static Player instance = null;
     private SpriteRenderer sprite;
+    public Animator anim;
     
     [Header("Movement")]
     [SerializeField] private LayerMask platformsLayerMask;
     public float jumpVelocity = 100f;
     public float moveSpeed = 40f;
+    
     
     public Rigidbody2D rb;
     [SerializeField] private BoxCollider2D boxCollider;
@@ -39,14 +39,15 @@ public class Player : MonoBehaviour {
         sprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
-        UIObject.SetActive(false);
-        
+        anim = GetComponent<Animator>();
+
     }
     public void Jump(float value)
     { 
         if (IsGrounded())
         {
             rb.AddForce(new Vector2(0,value), ForceMode2D.Impulse);
+            
         }
          
     }
@@ -64,12 +65,14 @@ public class Player : MonoBehaviour {
         if (sprite.isVisible == false)
         {
             Die();
-            SceneManager.LoadScene(2);
         }
         if (moveSpeed <= 0)
         {
             moveSpeed = 1;
         }
+        
+        anim.SetBool("isJumping", !IsGrounded());
+        
     }
 
     private void FixedUpdate()
@@ -77,12 +80,15 @@ public class Player : MonoBehaviour {
         HandleMovement();
         if (Input.GetKey(KeyCode.Space))
         {
+            
             Jump(jumpVelocity);
         }
     }
 
     private bool IsGrounded() {
-        RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, 1f, platformsLayerMask);
+        RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 
+            0f, Vector2.down, 1f, platformsLayerMask);
+        
         return raycastHit2d.collider != null;
     }
     
@@ -92,7 +98,7 @@ public class Player : MonoBehaviour {
        
         }
         rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
-        print("velocité x : " + rb.velocity.x);
+        anim.SetFloat("velocityX", rb.velocity.x);
     }
     
     private void Die() {
