@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2330417661047619402}
   m_Layer: 5
   m_Name: Reload
-  m_TagString: Untagged
+  m_TagString: SkillOne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 2330417662593450919}
   m_Layer: 5
   m_Name: SkillTwo
-  m_TagString: SkillTwo
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 2330417662778140008}
   m_Layer: 5
   m_Name: SkillOne
-  m_TagString: SkillOne
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 2330417663156707657}
   m_Layer: 5
   m_Name: ReloadTwo
-  m_TagString: Untagged
+  m_TagString: SkillTwo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

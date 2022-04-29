@@ -244,3 +244,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   addSpeed: 1
   RemoveSpeed: 1
+  objetcToDestroy: {fileID: 7371228854642385868, guid: 975b5f8939649664a9591b3bb9a7b2c2, type: 3}
