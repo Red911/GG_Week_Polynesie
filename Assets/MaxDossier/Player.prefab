@@ -189,4 +189,4 @@ MonoBehaviour:
   prefabs:
   - {fileID: 5519196148866034171, guid: 2f69896924a6ffd4798b0988bf9b7275, type: 3}
   - {fileID: 5519196148866034171, guid: 67a71609365b6824f9d0c5a4d3e9a82d, type: 3}
-  posDiff: 4
+  posDiff: 10
