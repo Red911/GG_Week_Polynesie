@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
 
     private static Player instance = null;
     private SpriteRenderer sprite;
+    public Animator anim;
     
     [Header("Movement")]
     [SerializeField] private LayerMask platformsLayerMask;
@@ -37,13 +38,15 @@ public class Player : MonoBehaviour {
         sprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
-        
+        anim = GetComponent<Animator>();
+
     }
     public void Jump(float value)
     { 
         if (IsGrounded())
         {
             rb.AddForce(new Vector2(0,value), ForceMode2D.Impulse);
+            
         }
          
     }
@@ -73,6 +76,8 @@ public class Player : MonoBehaviour {
         HandleMovement();
         if (Input.GetKey(KeyCode.Space))
         {
+            anim.SetBool("isJumping", IsGrounded());
+            anim.SetFloat("velocityY", rb.velocity.y);
             Jump(jumpVelocity);
         }
     }
@@ -88,7 +93,7 @@ public class Player : MonoBehaviour {
        
         }
         rb.velocity = new Vector2(+moveSpeed, rb.velocity.y);
-        print("velocité x : " + rb.velocity.x);
+        anim.SetFloat("velocityX", rb.velocity.x);
     }
     
     private void Die() {
