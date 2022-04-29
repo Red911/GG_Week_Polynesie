@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
     public float jumpVelocity = 100f;
     public float moveSpeed = 40f;
     
+    
     public Rigidbody2D rb;
     [SerializeField] private BoxCollider2D boxCollider;
     private bool waitForStart;
@@ -69,6 +70,8 @@ public class Player : MonoBehaviour {
         {
             moveSpeed = 1;
         }
+
+        
     }
 
     private void FixedUpdate()
@@ -76,14 +79,15 @@ public class Player : MonoBehaviour {
         HandleMovement();
         if (Input.GetKey(KeyCode.Space))
         {
-            anim.SetBool("isJumping", IsGrounded());
             anim.SetFloat("velocityY", rb.velocity.y);
             Jump(jumpVelocity);
         }
     }
 
     private bool IsGrounded() {
-        RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, 1f, platformsLayerMask);
+        RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 
+            0f, Vector2.down, 1f, platformsLayerMask);
+        
         return raycastHit2d.collider != null;
     }
     
