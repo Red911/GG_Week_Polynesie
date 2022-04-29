@@ -5,7 +5,15 @@ using UnityEngine;
 public class turretScript : MonoBehaviour
 
 {
+    [Header("Dieu")] 
+    public SpriteRenderer FlameGodSprite;
+    public SpriteRenderer RainGodSprite;
+    public Sprite FlameGodShiningSprite;
+    public Sprite RainGodShiningSprite;
+    private Sprite originalFlame;
+    private Sprite originalRain;
 
+    [Header("Turret")]
     public float Range;
     //la postion du joeur
 
@@ -32,7 +40,11 @@ public class turretScript : MonoBehaviour
 
     public float Force;
 
-    // Update is called once per frame
+    void Start()
+    {
+        originalFlame = FlameGodSprite.sprite;
+        originalRain = RainGodSprite.sprite;
+    }
     void Update()
     {
         if (Target != null)
@@ -97,16 +109,31 @@ public class turretScript : MonoBehaviour
     {
       GameObject BulletteIns = Instantiate(Bulette, ShootPoint.position, Quaternion.identity);
         BulletteIns.GetComponent<Rigidbody2D>().AddForce(Direction * Force);
+        FlameGodSprite.sprite = FlameGodShiningSprite;
+        Invoke("OriginalFlameSprite", 3f);
     }
 
     void shoot2()
     {
         GameObject BulletteIns = Instantiate(Bulette2, ShootPoint.position, Quaternion.identity);
         BulletteIns.GetComponent<Rigidbody2D>().AddForce(Direction * Force);
+        RainGodSprite.sprite = RainGodShiningSprite;
+        Invoke("OriginalRainSprite", 3f);
+        
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, Range);
+    }
+
+    private void OriginalFlameSprite()
+    {
+        FlameGodSprite.sprite = originalFlame;
+    }
+    
+    private void OriginalRainSprite()
+    {
+        RainGodSprite.sprite = originalRain;
     }
 }

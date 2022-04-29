@@ -13,6 +13,7 @@ TagManager:
   - SkillOne
   - SkillTwo
   - SkillThree
+  - thief
   layers:
   - Default
   - TransparentFX

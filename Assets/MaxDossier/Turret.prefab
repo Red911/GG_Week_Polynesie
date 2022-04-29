@@ -238,6 +238,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1535682263217480871}
   - component: {fileID: 1535682263217480870}
+  - component: {fileID: 7431243278854603099}
+  - component: {fileID: 2486320179844907778}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -272,15 +274,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc79adff64639c4ca5ea561a578726f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 10
-  Target:
-  - {fileID: 5040920256132050653, guid: 026dce2d3ff56b64aac2163278d7b333, type: 3}
+  FlameGodSprite: {fileID: 0}
+  RainGodSprite: {fileID: 0}
+  FlameGodShiningSprite: {fileID: 21300000, guid: c68d1a28dda9bf244b733aa7865147a4, type: 3}
+  RainGodShiningSprite: {fileID: 21300000, guid: f9cb8f863afe8b144a1812d39bf2c0f0, type: 3}
+  Range: 3
+  Target: {fileID: 0}
   AlarmLight: {fileID: 1535682263386153820}
   Gun: {fileID: 1535682262981289504}
   Bulette: {fileID: 5479771552474936214, guid: ee36ba322633d984ab577193300a040f, type: 3}
-  FireRate: 5
+  Bulette2: {fileID: 5479771552474936214, guid: b7e1c85c39d350941b5a5f09d5310930, type: 3}
+  FireRate: 0.1
   ShootPoint: {fileID: 1535682262936278721}
   Force: 300
+--- !u!50 &7431243278854603099
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535682263217480869}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!58 &2486320179844907778
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535682263217480869}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3
 --- !u!1 &1535682263386153820
 GameObject:
   m_ObjectHideFlags: 0
