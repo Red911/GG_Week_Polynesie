@@ -70,7 +70,8 @@ public class Player : MonoBehaviour {
         {
             moveSpeed = 1;
         }
-
+        
+        anim.SetBool("isJumping", !IsGrounded());
         
     }
 
@@ -79,7 +80,7 @@ public class Player : MonoBehaviour {
         HandleMovement();
         if (Input.GetKey(KeyCode.Space))
         {
-            anim.SetFloat("velocityY", rb.velocity.y);
+            
             Jump(jumpVelocity);
         }
     }
