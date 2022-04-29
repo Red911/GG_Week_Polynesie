@@ -11,6 +11,7 @@ public class PlayerInputHandler : MonoBehaviour
     public static int playerCount = 0;
 
     [SerializeField] List<GameObject> prefabs = new List<GameObject>();
+    [SerializeField] private float posDiff = 4;
 
     public Player Players => players;
     
@@ -18,7 +19,10 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (playerCount < 2)
         {
-            players = GameObject.Instantiate(prefabs[playerCount++], transform.position, transform.rotation).GetComponent<Player>();
+            players = GameObject.Instantiate(prefabs[playerCount],
+                transform.position + Vector3.right * posDiff * playerCount,
+                transform.rotation).GetComponent<Player>();
+            playerCount++;
         }
         
     }
