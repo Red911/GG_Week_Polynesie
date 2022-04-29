@@ -8,6 +8,7 @@ public class PlayerInputHandler : MonoBehaviour
     playerzer player;
     private static Player players;
     private ThiefPlayer thief;
+    private turretScript turret;
     public static int playerCount = 0;
 
     [SerializeField] List<GameObject> prefabs = new List<GameObject>();
@@ -36,11 +37,11 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-    public void Shoot(InputAction.CallbackContext context)
+    public void Fire(InputAction.CallbackContext context)
     {
         if(players && context.started)
         {
-            players.Shooter();
+            turret.shoot();
         }
     }
     
@@ -57,6 +58,14 @@ public class PlayerInputHandler : MonoBehaviour
         if(players && context.started)
         {
             thief.SpikeSpawner();
+        }
+    }
+
+    public void Water(InputAction.CallbackContext context)
+    {
+        if(players && context.started)
+        {
+            turret.shoot2();
         }
     }
     

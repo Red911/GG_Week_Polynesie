@@ -28,6 +28,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Water",
+                    "type": "Button",
+                    "id": "07c65a36-aa60-4cc5-adac-5a6bf0075d81",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -67,21 +75,10 @@
                 {
                     "name": "",
                     "id": "3c104eac-4a27-4a3e-aeab-1c939d152675",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "Player",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4206a86b-a9b7-4bc5-b3c9-9d9ca523d59e",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Thief",
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -105,6 +102,17 @@
                     "processors": "",
                     "groups": "Thief",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6b9e2233-f37f-4a54-8f2b-a97700d40283",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Water",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -143,7 +151,7 @@
                 {
                     "name": "",
                     "id": "bfa4dab5-09d3-47ae-a4d3-cf02c1d53cd2",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -154,7 +162,7 @@
                 {
                     "name": "",
                     "id": "833c4f3c-b802-4d36-b9cc-9fa571af73c2",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -165,7 +173,7 @@
                 {
                     "name": "",
                     "id": "8ac710fd-711e-4c0a-8560-e1e864ea8d34",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

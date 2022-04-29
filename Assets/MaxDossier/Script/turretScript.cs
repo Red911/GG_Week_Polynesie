@@ -105,7 +105,7 @@ public class turretScript : MonoBehaviour
        
     }
 
-    void shoot()
+    public void shoot()
     {
       GameObject BulletteIns = Instantiate(Bulette, ShootPoint.position, Quaternion.identity);
         BulletteIns.GetComponent<Rigidbody2D>().AddForce(Direction * Force);
@@ -113,7 +113,7 @@ public class turretScript : MonoBehaviour
         Invoke("OriginalFlameSprite", 3f);
     }
 
-    void shoot2()
+    public void shoot2()
     {
         GameObject BulletteIns = Instantiate(Bulette2, ShootPoint.position, Quaternion.identity);
         BulletteIns.GetComponent<Rigidbody2D>().AddForce(Direction * Force);

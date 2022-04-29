@@ -43,6 +43,14 @@ namespace GGWeek
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Water"",
+                    ""type"": ""Button"",
+                    ""id"": ""07c65a36-aa60-4cc5-adac-5a6bf0075d81"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -82,21 +90,10 @@ namespace GGWeek
                 {
                     ""name"": """",
                     ""id"": ""3c104eac-4a27-4a3e-aeab-1c939d152675"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Player"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4206a86b-a9b7-4bc5-b3c9-9d9ca523d59e"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Thief"",
                     ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -120,6 +117,17 @@ namespace GGWeek
                     ""processors"": """",
                     ""groups"": ""Thief"",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6b9e2233-f37f-4a54-8f2b-a97700d40283"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Water"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -158,7 +166,7 @@ namespace GGWeek
                 {
                     ""name"": """",
                     ""id"": ""bfa4dab5-09d3-47ae-a4d3-cf02c1d53cd2"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -169,7 +177,7 @@ namespace GGWeek
                 {
                     ""name"": """",
                     ""id"": ""833c4f3c-b802-4d36-b9cc-9fa571af73c2"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -180,7 +188,7 @@ namespace GGWeek
                 {
                     ""name"": """",
                     ""id"": ""8ac710fd-711e-4c0a-8560-e1e864ea8d34"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Keyboard>/l"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -797,6 +805,7 @@ namespace GGWeek
             m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
             m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
             m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+            m_Player_Water = m_Player.FindAction("Water", throwIfNotFound: true);
             // Thief
             m_Thief = asset.FindActionMap("Thief", throwIfNotFound: true);
             m_Thief_FiredItem = m_Thief.FindAction("Fired Item", throwIfNotFound: true);
@@ -866,6 +875,7 @@ namespace GGWeek
         private readonly InputAction m_Player_Look;
         private readonly InputAction m_Player_Fire;
         private readonly InputAction m_Player_Jump;
+        private readonly InputAction m_Player_Water;
         public struct PlayerActions
         {
             private @Control m_Wrapper;
@@ -873,6 +883,7 @@ namespace GGWeek
             public InputAction @Look => m_Wrapper.m_Player_Look;
             public InputAction @Fire => m_Wrapper.m_Player_Fire;
             public InputAction @Jump => m_Wrapper.m_Player_Jump;
+            public InputAction @Water => m_Wrapper.m_Player_Water;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -891,6 +902,9 @@ namespace GGWeek
                     @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                     @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
                     @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                    @Water.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWater;
+                    @Water.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWater;
+                    @Water.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWater;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -904,6 +918,9 @@ namespace GGWeek
                     @Jump.started += instance.OnJump;
                     @Jump.performed += instance.OnJump;
                     @Jump.canceled += instance.OnJump;
+                    @Water.started += instance.OnWater;
+                    @Water.performed += instance.OnWater;
+                    @Water.canceled += instance.OnWater;
                 }
             }
         }
@@ -1130,6 +1147,7 @@ namespace GGWeek
             void OnLook(InputAction.CallbackContext context);
             void OnFire(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
+            void OnWater(InputAction.CallbackContext context);
         }
         public interface IThiefActions
         {
