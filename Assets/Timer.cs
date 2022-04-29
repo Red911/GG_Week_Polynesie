@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class Timer : MonoBehaviour
         if (time <= 0)
         {
             stopTimer = true;
+            SceneManager.LoadScene(2);
         }
 
         if(stopTimer == false)
