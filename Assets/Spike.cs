@@ -33,9 +33,14 @@ public class Spike : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.collider.tag == "Player")
+     
+    }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Player")
         {
-            cam.player.GetComponent<Player>().moveSpeed += RemoveSpeed;
+            cam.player.GetComponent<Player>().moveSpeed -= RemoveSpeed;
+
         }
     }
 }

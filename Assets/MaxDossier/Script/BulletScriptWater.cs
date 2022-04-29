@@ -7,6 +7,7 @@ public class BulletScriptWater : MonoBehaviour
 {
     public int addSpeed = 1;
     public int RemoveSpeed = 1;
+   
     CameraFollow cam;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class BulletScriptWater : MonoBehaviour
         {
             cam.player.GetComponent<Player>().moveSpeed += addSpeed;
             Debug.Log("ta gagner dla vie");
+         
        
         }
         else

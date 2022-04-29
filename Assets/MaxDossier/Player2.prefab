@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704474743649193506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 1, z: 0}
+  m_LocalPosition: {x: -1, y: 0.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2812138767443758460}
@@ -137,7 +137,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 60207cf9a451dfa4e84c5939cf53a8ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
   firedItemSpawn: {fileID: 704474743649193506}
   firedItemPrefab: {fileID: 7837265968382079404, guid: 00e29c9d647a3cb40bd26348814578a4, type: 3}
   firedItemRate: 3
-  launchForce: 30
+  launchForce: 1
   usedFiredItem: 0
   imageCooldownFiredItem: {fileID: 0}
   imageCooldownSpike: {fileID: 0}

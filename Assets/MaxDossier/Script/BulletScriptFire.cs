@@ -10,6 +10,8 @@ public class BulletScriptFire : MonoBehaviour
 
     public int addSpeed = 1;
     public int RemoveSpeed = 1;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +32,14 @@ public class BulletScriptFire : MonoBehaviour
         {
             cam.player.GetComponent<Player>().moveSpeed += addSpeed;
             Debug.Log("ta gagner dla vie");
-        }else
+          
+        }
+        else
         {
             cam.player.GetComponent<Player>().moveSpeed -= RemoveSpeed;
             Debug.Log("ta perdu dla vie");
+            
+          
         }
 
         Destroy(this.gameObject);
