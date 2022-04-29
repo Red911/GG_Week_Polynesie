@@ -18,8 +18,7 @@ public class FiredItem : MonoBehaviour
         }
         else if (col.gameObject.tag == "Water")
         {
-            boxCollider2D.offset = new Vector2(0,0);
-            boxCollider2D.size = new Vector2(1, 1);
+            Destroy(gameObject);
         }
         
     }
