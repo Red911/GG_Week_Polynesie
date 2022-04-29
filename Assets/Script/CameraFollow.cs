@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
 
 public class CameraFollow : MonoBehaviour
 {
@@ -71,14 +73,16 @@ public class CameraFollow : MonoBehaviour
             cam.transform.position = cameraDest;
         }
 
-        if (cam.orthographicSize >= 30f)
+        if (cam.orthographicSize >= 20f)
         {
-            cam.orthographicSize = 30f;
+            cam.orthographicSize = 20f;
         }
         
-        if (cam.orthographicSize <= 5f)
+        if (cam.orthographicSize <= 3f)
         {
-            cam.orthographicSize = 5f;
+            SceneManager.LoadScene(1);
+            cam.orthographicSize = 3f;
+          
         }
     }
 

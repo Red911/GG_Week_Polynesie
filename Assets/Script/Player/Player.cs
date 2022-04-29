@@ -2,10 +2,12 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 public class Player : MonoBehaviour {
 
+    public GameObject UIObject;
     private static Player instance = null;
     private SpriteRenderer sprite;
     
@@ -37,6 +39,7 @@ public class Player : MonoBehaviour {
         sprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        UIObject.SetActive(false);
         
     }
     public void Jump(float value)
@@ -61,6 +64,7 @@ public class Player : MonoBehaviour {
         if (sprite.isVisible == false)
         {
             Die();
+            SceneManager.LoadScene(2);
         }
         if (moveSpeed <= 0)
         {
