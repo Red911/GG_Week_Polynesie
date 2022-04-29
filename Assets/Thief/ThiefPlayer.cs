@@ -61,13 +61,13 @@ public class ThiefPlayer : MonoBehaviour
             ApplyCoolDownSpike();
         }
         
-        if (Input.GetKeyDown(KeyCode.S) && Time.time > nextFire)
+        if (Input.GetKeyDown(KeyCode.K) && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             SpikeSpawner();
         }
         
-        if (Input.GetKeyDown(KeyCode.P) && Time.time > nextFiredItem)
+        if (Input.GetKeyDown(KeyCode.J) && Time.time > nextFiredItem)
         {
             nextFiredItem = Time.time + firedItemRate;
             FiredItemThrow();

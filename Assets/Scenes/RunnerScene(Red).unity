@@ -1329,7 +1329,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: b65760ef-2dfa-4922-b933-436f02bd9649
-      m_Path: <Keyboard>/j
+      m_Path: <Keyboard>/space
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -1344,8 +1344,8 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 3cb82ce1-73ae-48e0-9335-011805fbb433
-      m_Path: <Gamepad>/buttonSouth
+      m_Id: 07b03ba5-16f9-481d-b1c7-2954df5fbf63
+      m_Path: <Keyboard>/l
       m_Interactions: 
       m_Processors: 
       m_Groups: 

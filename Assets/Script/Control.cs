@@ -188,7 +188,7 @@ namespace GGWeek
                 {
                     ""name"": """",
                     ""id"": ""8ac710fd-711e-4c0a-8560-e1e864ea8d34"",
-                    ""path"": ""<Keyboard>/l"",
+                    ""path"": ""<Keyboard>/m"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
